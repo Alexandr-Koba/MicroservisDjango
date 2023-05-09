@@ -1,6 +1,14 @@
 from django.db import models
-from datetime import datetime
+from datetime import datetime, timezone
+from resources import POSITIONS
+
 class Staff(models.Model):
+    director = 'DI'
+    admin = 'AD'
+    cook = 'CO'
+    cashier = 'CA'
+    cleaner = 'CL'
+
     full_name = models.CharField(max_length = 255)
     position = models.CharField(max_length = 255)
     labor_contract = models.IntegerField()
